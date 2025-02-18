@@ -12,6 +12,7 @@ class CompaniesController < ApplicationController
     @name = @company["name"]
     @city = @company["city"]
     @state = @company["state"]
+    @contacts = Contact.where({"company_id" => params["id"]})
     # render companies/show view with details about Company
     end
 
